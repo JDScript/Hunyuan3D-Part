@@ -1348,7 +1348,6 @@ def mesh_sam(
 class AutoMask:
     def __init__(
         self,
-        ckpt_path,
         point_num=100000,
         prompt_num=400,
         threshold=0.95,
@@ -1362,9 +1361,6 @@ class AutoMask:
         post_process: bool, 是否后处理
         """
         self.model = YSAM()
-        self.model.load_state_dict(
-            torch.load(ckpt_path, map_location="cpu")["state_dict"]
-        )
         self.model.eval()
         self.model_parallel = torch.nn.DataParallel(self.model)
         self.model.cuda()
