@@ -1,6 +1,6 @@
 name: "Xpart Pipeline release"
 
-ckpt_path: checkpoints/xpart.pt
+ckpt_path: ./ckpt
 
 shapevae:
   target: partgen.models.autoencoders.VolumeDecoderShapeVAE
@@ -25,8 +25,6 @@ shapevae:
 
 bbox_predictor:
   target: partgen.bbox_estimator.auto_mask_api.AutoMask
-  params:
-    ckpt_path: checkpoints/p3sam.ckpt
 conditioner:
   target: partgen.models.conditioner.condioner_release.Conditioner
   params:
