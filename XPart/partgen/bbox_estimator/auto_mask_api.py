@@ -43,7 +43,8 @@ class YSAM(nn.Module):
     ):
         load_state_dict(
             self,
-            state_dict,
+            ckpt_path=None,
+            state_dict=state_dict,
             strict=strict,
             assign=assign,
             ignore_seg_mlp=ignore_seg_mlp,
