@@ -24,8 +24,7 @@ from numba import njit
 from ..models import sonata
 
 #################################
-sys.path.append("../P3-SAM")
-from model import build_P3SAM, load_state_dict
+from p3_sam import build_P3SAM, load_state_dict
 
 
 class YSAM(nn.Module):
